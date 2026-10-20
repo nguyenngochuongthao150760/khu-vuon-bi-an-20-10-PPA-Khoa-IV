@@ -6,7 +6,7 @@ const membersData = [
         name: "Cô Nguyễn Lệ Bình",
         type: "teacher",
         flower: "🌻",
-        wish: "Kính gửi Cô Nguyễn Lệ Bình thương mến,
+        wish: `Kính gửi Cô Nguyễn Lệ Bình thương mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô lòng biết ơn sâu sắc và những lời chúc yêu thương nhất.
 
@@ -18,27 +18,27 @@ Nhân ngày đặc biệt này, chúng em kính chúc cô luôn dồi dào sức
 
 Chúng em xin cảm ơn cô vì không chỉ trao truyền tri thức, mà còn thắp lên trong chúng em những giá trị sẽ còn ở lại thật lâu trên hành trình làm nghề và làm người.
 
-Kính chúc cô một ngày 20/10 thật ấm áp và ngập tràn yêu thương! 💐"
+Kính chúc cô một ngày 20/10 thật ấm áp và ngập tràn yêu thương! 💐`
     },
     {
         id: 2,
         name: "Cô Nguyễn Thị Thuý",
         type: "teacher",
         flower: "🌷",
-        wish: "Kính gửi Cô Nguyễn Thị Thúy thương mến,
+        wish: `Kính gửi Cô Nguyễn Thị Thúy thương mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc tốt đẹp và tình cảm trân quý nhất.
 Chúng em biết ơn cô vì đã luôn tận tình hướng dẫn, hỗ trợ và đồng hành cùng nhóm trong suốt khóa học Tâm vận động Aucouturier. Từ những chia sẻ thực tế đến những góp ý gần gũi, sự hiện diện và đồng hành của cô đã giúp chúng em có thêm sự tự tin, từng bước hiểu sâu hơn và vận dụng kiến thức vào thực hành.
 Kính chúc cô luôn mạnh khỏe, bình an, hạnh phúc và giữ mãi niềm vui trong công việc mình yêu quý. Mong rằng trên hành trình đồng hành cùng các học viên và trẻ thơ, cô sẽ luôn nhận được thật nhiều sự trân trọng, yêu thương và những thành quả ý nghĩa.
 Cảm ơn cô vì đã luôn kiên nhẫn nâng đỡ, tận tình chỉ dẫn và giúp chúng em vững vàng hơn trên hành trình học hỏi, thực hành và trưởng thành cùng Tâm vận động Aucouturier.
-Chúng em kính chúc cô một ngày 20/10 thật ấm áp, nhiều niềm vui và ngập tràn yêu thương! ❤️"
+Chúng em kính chúc cô một ngày 20/10 thật ấm áp, nhiều niềm vui và ngập tràn yêu thương! ❤️`
     },
     {
         id: 3,
         name: "Cô Nguyễn Thị Dạ Hương",
         type: "teacher",
         flower: "🌸",
-        wish: "Kính gửi Cô Nguyễn Thị Dạ Hương kính mến,
+        wish: `Kính gửi Cô Nguyễn Thị Dạ Hương kính mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc yêu thương và lòng biết ơn chân thành nhất.
 
@@ -48,14 +48,14 @@ Kính chúc cô luôn mạnh khỏe, tươi trẻ, hạnh phúc và tràn đầy
 
 Chúc cô luôn giữ được sự nhiệt thành trong công việc, sự an yên trong tâm hồn và niềm hạnh phúc khi nhìn thấy những giá trị tốt đẹp mình trao đi được tiếp nối và lan tỏa.
 
-Chúng em kính chúc cô một ngày 20/10 thật rạng rỡ, ngập tràn yêu thương và hạnh phúc! ❤️"
+Chúng em kính chúc cô một ngày 20/10 thật rạng rỡ, ngập tràn yêu thương và hạnh phúc! ❤️`
     },
     {
         id: 4,
         name: "Cô Hoàng Thị Thu Hường",
         type: "teacher",
         flower: "🌺",
-        wish: "Kính gửi Cô Hoàng Thị Thu Hường kính mến,
+        wish: `Kính gửi Cô Hoàng Thị Thu Hường kính mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc tốt đẹp nhất cùng tình cảm trân quý từ tận đáy lòng.
 
@@ -65,14 +65,14 @@ Kính chúc cô luôn dồi dào sức khỏe, tâm an, lòng vui, gia đình h�
 
 Chúc cô luôn nhận được thật nhiều yêu thương, bởi những người dành cả trái tim để nâng đỡ và đồng hành cùng người khác cũng xứng đáng được cuộc đời dịu dàng ôm ấp và yêu thương.
 
-Chúng em kính chúc cô một ngày 20/10 thật ấm áp, an vui và trọn vẹn hạnh phúc! ❤️"
+Chúng em kính chúc cô một ngày 20/10 thật ấm áp, an vui và trọn vẹn hạnh phúc! ❤️`
     },
     {
         id: 5,
         name: "Cô Danielle Michaux",
         type: "teacher",
         flower: "🌹",
-        wish: "Dear Danielle Michaux,
+        wish: `Dear Danielle Michaux,
 
 On the occasion of Vietnamese Women's Day, October 20th, we would like to express our heartfelt gratitude for sharing your invaluable international expertise, profound knowledge, and genuine passion with our Aucouturier Psychomotricity Class IV.
 
@@ -82,7 +82,7 @@ May your special day be filled with love, joy, and beautiful moments. We wish yo
 
 Thank you for sharing not only your expertise, but also the inspiration to keep learning, growing, and making a meaningful difference in the lives of children.
 
-With our warmest wishes and deepest appreciation, Happy Vietnamese Women's Day! 🌷❤️"
+With our warmest wishes and deepest appreciation, Happy Vietnamese Women's Day! 🌷❤️`
     },
 
     // --- 25 BẠN NỮ KHÓA TÂM VẬN ĐỘNG AUCOUTURIER KHÓA IV ---
