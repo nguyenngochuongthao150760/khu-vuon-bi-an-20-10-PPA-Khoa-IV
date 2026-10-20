@@ -15,11 +15,11 @@
         <div class="stars-bg"></div>
         <div class="welcome-content">
             <span class="badge">20/10 Cổ Tích Nhiệm Màu</span>
-            <h1>Khu Vườn Tri Ứn Aucouturier Khóa IV</h1>
+            <h1>Khu Vườn 20/10 Aucouturier Khóa IV</h1>
             <p>Nơi 30 đóa hoa tỏa sáng rực rỡ, lưu giữ những lời chúc ngọt ngào và tri ân sâu sắc nhất gửi đến các Cô và các Bạn.</p>
             
             <div class="search-box-container">
-                <input type="text" id="global-search" placeholder="Nhập tên của bạn hoặc Cô để tìm kiếm nhanh...">
+                <input type="text" id="global-search" placeholder="Nhập tên của Cô hoặc Chị/Bạn để tìm kiếm nhanh...">
                 <div id="search-suggestions" class="suggestions-list"></div>
             </div>
 
@@ -49,15 +49,47 @@
                 <div class="portal-glow"></div>
             </div>
             
-            <div class="gift-box-wrapper" id="gift-box-wrapper">
-                <div class="recipient-badge" id="recipient-tag-name">Tên Người Nhận</div>
-                <div class="gift-box" onclick="openGiftBox()">
-                    <div class="box-lid"><span>🎁</span></div>
-                    <div class="box-body"></div>
-                    <div class="box-ribbon"></div>
-                </div>
-                <p class="instruction-text">Chạm vào hộp quà để mở lời chúc 20/10!</p>
+        <div class="gift-box-wrapper" id="gift-box-wrapper">
+    <div class="recipient-badge" id="recipient-tag-name">
+        Tên Người Nhận
+    </div>
+
+    <div class="gift-stage">
+        <!-- Ánh sáng ma thuật phía sau hộp -->
+        <div class="gift-aura"></div>
+
+        <!-- Hoa nở và cánh hoa rơi -->
+        <div class="bloom-stage" id="bloom-stage"
+             aria-hidden="true"></div>
+
+        <div class="gift-box" id="gift-box"
+             role="button" tabindex="0"
+             aria-label="Mở hộp quà 20/10"
+             onclick="openGiftBox()"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGiftBox()}">
+
+            <div class="box-lid">
+                <span class="gift-emblem">✿</span>
+                <span class="gift-bow">🎀</span>
             </div>
+
+            <div class="box-body">
+                <span class="box-seal">✧</span>
+            </div>
+
+            <div class="box-ribbon ribbon-vertical"></div>
+            <div class="box-ribbon ribbon-horizontal"></div>
+        </div>
+    </div>
+
+    <p class="instruction-text">
+        ✨ Chạm nhẹ để mở món quà yêu thương ✨
+    </p>
+
+    <div class="teacher-note" id="teacher-note">
+        ✧ Món quà tri ân đặc biệt dành riêng cho Cô ✧
+    </div>
+</div>
 
             <!-- Modal Hiển thị lời chúc chi tiết -->
             <div id="wish-modal" class="wish-modal">
@@ -74,6 +106,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+ <script src="./script.js?v=2"></script>
 </body>
 </html>
