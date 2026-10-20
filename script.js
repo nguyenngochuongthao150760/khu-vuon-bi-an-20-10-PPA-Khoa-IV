@@ -103,8 +103,11 @@ function renderGardenGrid() {
 
 // Hiệu ứng đi qua cổng cổ tích & đến hộp quà của thành viên
 function openPortalForMember(member) {
+    if (!member) return;
+
     selectedMember = member;
 
+    // Chuyển sang màn hình cổng cổ tích
     document.getElementById('garden-screen')
         .classList.remove('active');
 
@@ -114,35 +117,33 @@ function openPortalForMember(member) {
     const portal = document.getElementById('portal-screen');
     const giftBox = document.getElementById('gift-box');
     const bloomStage = document.getElementById('bloom-stage');
+    const wishModal = document.getElementById('wish-modal');
 
-    // Phân biệt quà cô giáo và học viên
+    // Phân biệt giao diện quà tặng cô giáo và học viên
     portal.classList.toggle(
         'teacher-portal',
         member.type === 'teacher'
     );
 
+    // Đặt lại trạng thái hộp quà khi chọn người mới
     giftBox.classList.remove('opened', 'blooming');
     bloomStage.innerHTML = '';
+    bloomStage.classList.remove('bloom-active');
 
-    document.getElementById('recipient-tag-name').innerText =
+    // Hiển thị tên người nhận
+    document.getElementById('recipient-tag-name').textContent =
         member.name;
 
     document.getElementById('teacher-note').hidden =
         member.type !== 'teacher';
 
-    document.getElementById('wish-modal')
-        .classList.remove('active');
+    // Đóng lời chúc cũ nếu đang mở
+    wishModal.classList.remove('active');
 
-    // Đổi biểu tượng hoa theo từng thành viên
-    bloomStage.dataset.flower = member.flower;
+    // Lưu biểu tượng hoa cho hiệu ứng nở
+    bloomStage.dataset.flower = member.flower || '🌸';
 }
-    
-    // Reset hộp quà
-    const giftBox = document.querySelector('.gift-box');
-    giftBox.classList.remove('opened');
-    document.getElementById('recipient-tag-name').innerText = member.name;
-    document.getElementById('wish-modal').classList.remove('active');
-}
+
 
 // Mở hộp quà
 function openGiftBox() {
