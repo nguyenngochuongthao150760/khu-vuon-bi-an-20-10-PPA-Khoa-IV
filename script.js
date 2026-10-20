@@ -6,14 +6,32 @@ const membersData = [
         name: "Cô Nguyễn Lệ Bình",
         type: "teacher",
         flower: "🌻",
-        wish: "Kính gửi Cô Nguyễn Lệ Bình, nhân ngày 20/10, em xin gửi đến cô lời tri ân sâu sắc nhất. Cảm ơn cô đã dẫn dắt chúng em trên con đường chinh phục tri thức của bộ môn Tâm vận động Aucouturier Khóa IV. Sự tận tâm, kiên nhẫn và trái tim nhiệt huyết của cô chính là ngọn lửa soi đường, truyền cảm hứng mạnh mẽ cho chúng em. Chúc cô luôn dồi dào sức khỏe, luôn hạnh phúc và giữ mãi nụ cười rạng ngời trên môi!"
+        wish: "Kính gửi Cô Nguyễn Lệ Bình thương mến,
+
+Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô lòng biết ơn sâu sắc và những lời chúc yêu thương nhất.
+
+Chúng em biết ơn cô không chỉ vì đã tận tâm dẫn dắt chúng em trên hành trình khám phá Tâm vận động Aucouturier – Khóa IV, mà còn vì những giá trị sâu sắc, sự tinh tế và tình yêu nghề mà cô đã truyền trao qua từng bài học.
+
+Sự tận tụy, kiên nhẫn và trái tim đầy nhiệt huyết của cô đã truyền cảm hứng để chúng em thêm thấu hiểu, biết lắng nghe và đồng hành cùng trẻ bằng sự tôn trọng, yêu thương và chân thành. Những điều cô gieo hôm nay sẽ tiếp tục được chúng em gìn giữ và lan tỏa trên hành trình phía trước.
+
+Nhân ngày đặc biệt này, chúng em kính chúc cô luôn dồi dào sức khỏe, bình an, hạnh phúc và mãi giữ ngọn lửa đam mê cùng nụ cười rạng rỡ. Mong cô luôn được yêu thương, trân quý và nhận lại thật nhiều điều tốt đẹp như những giá trị cô đã trao đi.
+
+Chúng em xin cảm ơn cô vì không chỉ trao truyền tri thức, mà còn thắp lên trong chúng em những giá trị sẽ còn ở lại thật lâu trên hành trình làm nghề và làm người.
+
+Kính chúc cô một ngày 20/10 thật ấm áp và ngập tràn yêu thương! 💐"
     },
     {
         id: 2,
         name: "Cô Nguyễn Thị Thuý",
         type: "teacher",
         flower: "🌷",
-        wish: "Kính chúc Cô Nguyễn Thị Thuý ngày 20/10 ngập tràn niềm vui và hạnh phúc. Cảm ơn cô đã luôn đồng hành, truyền đạt những kiến thức quý báu và bài học thực tiễn tuyệt vời trong khóa học Aucouturier. Chúc cô luôn giữ vững ngọn lửa đam mê với nghề, luôn mạnh khỏe, bình an và gặt hái thêm nhiều thành công rực rỡ hơn nữa trong sự nghiệp trồng người."
+        wish: "Kính gửi Cô Nguyễn Thị Thúy thương mến,
+
+Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc tốt đẹp và tình cảm trân quý nhất.
+Chúng em biết ơn cô vì đã luôn tận tình hướng dẫn, hỗ trợ và đồng hành cùng nhóm trong suốt khóa học Tâm vận động Aucouturier. Từ những chia sẻ thực tế đến những góp ý gần gũi, sự hiện diện và đồng hành của cô đã giúp chúng em có thêm sự tự tin, từng bước hiểu sâu hơn và vận dụng kiến thức vào thực hành.
+Kính chúc cô luôn mạnh khỏe, bình an, hạnh phúc và giữ mãi niềm vui trong công việc mình yêu quý. Mong rằng trên hành trình đồng hành cùng các học viên và trẻ thơ, cô sẽ luôn nhận được thật nhiều sự trân trọng, yêu thương và những thành quả ý nghĩa.
+Cảm ơn cô vì đã luôn kiên nhẫn nâng đỡ, tận tình chỉ dẫn và giúp chúng em vững vàng hơn trên hành trình học hỏi, thực hành và trưởng thành cùng Tâm vận động Aucouturier.
+Chúng em kính chúc cô một ngày 20/10 thật ấm áp, nhiều niềm vui và ngập tràn yêu thương! ❤️"
     },
     {
         id: 3,
