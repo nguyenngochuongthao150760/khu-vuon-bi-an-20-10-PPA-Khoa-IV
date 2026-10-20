@@ -27,14 +27,14 @@ const membersData = [
         name: "Cô Hoàng Thị Thu Hường",
         type: "teacher",
         flower: "🌺",
-        wish: "Kính gửi Cô Hoàng Thị Thu Hường, sự dịu dàng và tận tụy của cô trong mỗi giờ học Tâm vận động Aucouturier luôn để lại ấn tượng sâu đậm trong lòng chúng em. Nhân ngày 20/10, chúc cô luôn ngập tràn niềm vui, sức khỏe dồi dào, gia đình hạnh phúc và luôn là người "truyền lửa" nhiệt huyết nhất cho các thế hệ học viên."
+        wish: "Kính gửi Cô Hoàng Thị Thu Hường, sự dịu dàng và tận tụy của cô trong mỗi giờ học Tâm vận động Aucouturier luôn để lại ấn tượng sâu đậm trong lòng chúng em. Nhân ngày 20/10, chúc cô luôn ngập tràn niềm vui, sức khỏe dồi dào, gia đình hạnh phúc và luôn là người truyền lửa nhiệt huyết nhất cho các thế hệ học viên."
     },
     {
         id: 5,
         name: "Cô Danielle Michaux",
         type: "teacher",
         flower: "🌹",
-        wish: "Dear Cô Danielle Michaux, thank you for bringing your invaluable international expertise and profound passion to our Aucouturier Psychomotricity Class IV. Your guidance has opened new horizons for us. Wishing you a wonderful and joyful Vietnamese Women's Day (20/10) filled with love, happiness, and continued success in your inspiring educational journey!"
+        wish: "Dear Danielle Michaux, thank you for bringing your invaluable international expertise and profound passion to our Aucouturier Psychomotricity Class IV. Your guidance has opened new horizons for us. Wishing you a wonderful and joyful Vietnamese Women's Day (20/10) filled with love, happiness, and continued success in your inspiring educational journey!"
     },
 
     // --- 25 BẠN NỮ KHÓA TÂM VẬN ĐỘNG AUCOUTURIER KHÓA IV ---
@@ -104,8 +104,38 @@ function renderGardenGrid() {
 // Hiệu ứng đi qua cổng cổ tích & đến hộp quà của thành viên
 function openPortalForMember(member) {
     selectedMember = member;
-    document.getElementById('garden-screen').classList.remove('active');
-    document.getElementById('portal-screen').classList.add('active');
+
+    document.getElementById('garden-screen')
+        .classList.remove('active');
+
+    document.getElementById('portal-screen')
+        .classList.add('active');
+
+    const portal = document.getElementById('portal-screen');
+    const giftBox = document.getElementById('gift-box');
+    const bloomStage = document.getElementById('bloom-stage');
+
+    // Phân biệt quà cô giáo và học viên
+    portal.classList.toggle(
+        'teacher-portal',
+        member.type === 'teacher'
+    );
+
+    giftBox.classList.remove('opened', 'blooming');
+    bloomStage.innerHTML = '';
+
+    document.getElementById('recipient-tag-name').innerText =
+        member.name;
+
+    document.getElementById('teacher-note').hidden =
+        member.type !== 'teacher';
+
+    document.getElementById('wish-modal')
+        .classList.remove('active');
+
+    // Đổi biểu tượng hoa theo từng thành viên
+    bloomStage.dataset.flower = member.flower;
+}
     
     // Reset hộp quà
     const giftBox = document.querySelector('.gift-box');
@@ -116,15 +146,77 @@ function openPortalForMember(member) {
 
 // Mở hộp quà
 function openGiftBox() {
-    const giftBox = document.querySelector('.gift-box');
-    if (!giftBox.classList.contains('opened')) {
-        giftBox.classList.add('opened');
-        
-        // Hiển thị modal lời chúc sau hiệu ứng mở hộp
-        setTimeout(() => {
-            showWishModal(selectedMember);
-        }, 600);
+    if (!selectedMember) return;
+
+    const giftBox = document.getElementById('gift-box');
+
+    if (giftBox.classList.contains('opened')) return;
+
+    giftBox.classList.add('opened');
+
+    // Cho hoa bung nở sau khi nắp hộp bắt đầu mở
+    window.setTimeout(() => {
+        bloomFlower();
+    }, 350);
+
+    // Hiện lời chúc sau khi hiệu ứng hoa bắt đầu
+    window.setTimeout(() => {
+        showWishModal(selectedMember);
+    }, 1900);
+}
+
+function bloomFlower() {
+    const stage = document.getElementById('bloom-stage');
+    if (!stage || !selectedMember) return;
+
+    stage.innerHTML = '';
+    stage.classList.remove('bloom-active');
+
+    const isTeacher = selectedMember.type === 'teacher';
+    const flower = selectedMember.flower || '🌸';
+
+    // Đóa hoa chính nở từ giữa hộp quà
+    const bloom = document.createElement('div');
+    bloom.className = 'bloom-flower';
+    bloom.textContent = flower;
+    stage.appendChild(bloom);
+
+    // Tạo các cánh hoa bay và rơi
+    const petalCount = isTeacher ? 30 : 18;
+
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('span');
+
+        petal.className = 'falling-petal';
+        petal.textContent = ['🌸', '🌷', '✿', '❀'][i % 4];
+
+        const angle = Math.random() * 360;
+        const distance = 60 + Math.random() * (
+            isTeacher ? 150 : 100
+        );
+
+        const radians = angle * Math.PI / 180;
+        const x = Math.cos(radians) * distance;
+        const y = Math.sin(radians) * distance;
+
+        petal.style.setProperty('--petal-x', `${x}px`);
+        petal.style.setProperty('--petal-y', `${y}px`);
+        petal.style.setProperty(
+            '--petal-delay',
+            `${Math.random() * 0.65}s`
+        );
+        petal.style.setProperty(
+            '--petal-duration',
+            `${1.8 + Math.random() * 1.7}s`
+        );
+
+        stage.appendChild(petal);
     }
+
+    // Kích hoạt animation sau khi đã thêm các phần tử
+    requestAnimationFrame(() => {
+        stage.classList.add('bloom-active');
+    });
 }
 
 // Hiển thị Modal Lời Chúc
@@ -146,36 +238,85 @@ function setupSearchSystem() {
     const input = document.getElementById('global-search');
     const suggestionsBox = document.getElementById('search-suggestions');
 
-    input.addEventListener('input', (e) => {
-        const keyword = e.target.value.toLowerCase().trim();
-        if (keyword === '') {
+    if (!input || !suggestionsBox) return;
+
+    // Chuyển về chữ thường, bỏ dấu tiếng Việt
+    function normalizeText(text) {
+        return text
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/đ/g, 'd')
+            .replace(/Đ/g, 'd')
+            .toLowerCase()
+            .trim();
+    }
+
+    input.addEventListener('input', function () {
+        const keyword = normalizeText(input.value);
+        suggestionsBox.innerHTML = '';
+
+        if (!keyword) {
             suggestionsBox.style.display = 'none';
             return;
         }
 
-        const filtered = membersData.filter(m => m.name.toLowerCase().includes(keyword));
-        if (filtered.length > 0) {
-            suggestionsBox.innerHTML = '';
-            filtered.forEach(m => {
-                const item = document.createElement('div');
-                item.className = 'suggestion-item';
-                item.innerText = `${m.flower} ${m.name} (${m.type === 'teacher' ? 'Cô giáo' : 'Học viên'})`;
-                item.onclick = () => {
-                    input.value = m.name;
-                    suggestionsBox.style.display = 'none';
-                    openPortalForMember(m);
-                };
-                suggestionsBox.appendChild(item);
-            });
+        // Tìm theo một phần tên, không phân biệt dấu
+        const results = membersData.filter(function (member) {
+            return normalizeText(member.name).includes(keyword);
+        });
+
+        if (results.length === 0) {
+            const empty = document.createElement('div');
+            empty.className = 'suggestion-item';
+            empty.textContent = 'Không tìm thấy tên phù hợp 🌷';
+            empty.style.cursor = 'default';
+            suggestionsBox.appendChild(empty);
             suggestionsBox.style.display = 'block';
-        } else {
-            suggestionsBox.style.display = 'none';
+            return;
         }
+
+        results.forEach(function (member) {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.className = 'suggestion-item';
+
+            item.textContent =
+                `${member.flower} ${member.name} (${
+                    member.type === 'teacher' ? 'Cô giáo' : 'Học viên'
+                })`;
+
+            item.style.display = 'block';
+            item.style.width = '100%';
+            item.style.color = '#fff';
+            item.style.background = 'transparent';
+            item.style.font = 'inherit';
+            item.style.textAlign = 'left';
+            item.style.border = 'none';
+            item.style.cursor = 'pointer';
+
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                input.value = member.name;
+                suggestionsBox.style.display = 'none';
+
+                openPortalForMember(member);
+            });
+
+            suggestionsBox.appendChild(item);
+        });
+
+        suggestionsBox.style.display = 'block';
     });
 
-    // Ẩn suggestions khi click ngoài
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-box-container')) {
+    // Không đóng danh sách khi bấm vào gợi ý
+    suggestionsBox.addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('.search-box-container')) {
             suggestionsBox.style.display = 'none';
         }
     });
