@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu Vườn Cổ Tích - Chúc Mừng 20/10 Aucouturier Khóa IV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Thư viện hiệu ứng hạt & âm thanh (tùy chọn) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Màn hình chào mừng / Lối vào khu vườn -->
+    <div id="welcome-screen" class="screen active">
+        <div class="stars-bg"></div>
+        <div class="welcome-content">
+            <span class="badge">20/10 Cổ Tích Nhiệm Màu</span>
+            <h1>Khu Vườn Tri Ứn Aucouturier Khóa IV</h1>
+            <p>Nơi 30 đóa hoa tỏa sáng rực rỡ, lưu giữ những lời chúc ngọt ngào và tri ân sâu sắc nhất gửi đến các Cô và các Bạn.</p>
+            
+            <div class="search-box-container">
+                <input type="text" id="global-search" placeholder="Nhập tên của bạn hoặc Cô để tìm kiếm nhanh...">
+                <div id="search-suggestions" class="suggestions-list"></div>
+            </div>
+
+            <button class="btn-magic" onclick="enterGarden()">Khám Phá Khu Vườn 🌸</button>
+        </div>
+    </div>
+
+    <!-- Màn hình bản đồ khu vườn 30 đóa hoa -->
+    <div id="garden-screen" class="screen">
+        <div class="garden-header">
+            <h2>✨ Khu Vườn 30 Đóa Hoa Phát Sáng ✨</h2>
+            <p>Chạm vào đóa hoa của riêng bạn để bước qua cổng cổ tích và mở hộp quà bí mật</p>
+            <button class="btn-back" onclick="backToWelcome()">↩ Quay lại trang chủ</button>
+        </div>
+        
+        <div class="garden-map" id="flower-garden-grid">
+            <!-- Các đóa hoa sẽ được render tự động bằng Javascript -->
+        </div>
+    </div>
+
+    <!-- Màn hình Cổng Cổ Tích & Mở Hộp Quà -->
+    <div id="portal-screen" class="screen">
+        <div class="portal-container">
+            <div class="fairy-gate" id="fairy-gate">
+                <div class="gate-left"></div>
+                <div class="gate-right"></div>
+                <div class="portal-glow"></div>
+            </div>
+            
+            <div class="gift-box-wrapper" id="gift-box-wrapper">
+                <div class="recipient-badge" id="recipient-tag-name">Tên Người Nhận</div>
+                <div class="gift-box" onclick="openGiftBox()">
+                    <div class="box-lid"><span>🎁</span></div>
+                    <div class="box-body"></div>
+                    <div class="box-ribbon"></div>
+                </div>
+                <p class="instruction-text">Chạm vào hộp quà để mở lời chúc 20/10!</p>
+            </div>
+
+            <!-- Modal Hiển thị lời chúc chi tiết -->
+            <div id="wish-modal" class="wish-modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeWishModal()">&times;</span>
+                    <div class="flower-icon-top">🌹</div>
+                    <h3 id="modal-name">Tên Người Nhận</h3>
+                    <div class="wish-text-box" id="modal-wish-content">
+                        <!-- Nội dung lời chúc chèn ở đây -->
+                    </div>
+                    <button class="btn-magic" onclick="closeWishModal()">Khám phá đóa hoa khác ✨</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
