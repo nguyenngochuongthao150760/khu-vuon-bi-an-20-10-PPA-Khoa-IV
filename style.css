@@ -413,3 +413,765 @@ h1 {
     margin-bottom: 25px;
     border-left: 4px solid var(--primary-color);
 }
+
+
+/* =========================================
+   20/10 FAIRY GARDEN - ELEGANT EDITION
+   ========================================= */
+
+:root {
+    --primary-color: #e8a2b6;
+    --secondary-color: #b95e82;
+    --fairy-glow: #f4dca0;
+    --bg-dark: #10091c;
+    --bg-gradient:
+        radial-gradient(ellipse at 50% 0%, #492548 0%, transparent 65%),
+        linear-gradient(145deg, #170d26, #29142f 55%, #10091c);
+    --champagne: #f4dca0;
+    --ivory: #fff5e8;
+    --rose: #e8a2b6;
+}
+
+body {
+    background: #10091c;
+    color: var(--ivory);
+}
+
+/* Hoa trang trí trên các màn hình */
+.screen {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.screen::before,
+.screen::after {
+    content: "✿  ❀  ✧  ❁  ✿";
+    position: absolute;
+    z-index: -1;
+    color: rgba(244, 220, 160, 0.12);
+    font-size: clamp(22px, 4vw, 48px);
+    letter-spacing: 20px;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: garden-drift 18s ease-in-out infinite alternate;
+}
+
+.screen::before {
+    top: 9%;
+    left: -5%;
+    transform: rotate(-12deg);
+}
+
+.screen::after {
+    bottom: 8%;
+    right: -8%;
+    color: rgba(232, 162, 182, 0.15);
+    transform: rotate(12deg);
+    animation-delay: -8s;
+}
+
+@keyframes garden-drift {
+    from { translate: 0 0; }
+    to { translate: 18px -14px; }
+}
+
+/* Trang chào */
+#welcome-screen,
+#garden-screen {
+    background: var(--bg-gradient);
+}
+
+.badge {
+    color: var(--champagne);
+    background: rgba(244, 220, 160, 0.09);
+    border: 1px solid rgba(244, 220, 160, 0.4);
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 25px rgba(244, 220, 160, 0.06);
+}
+
+h1 {
+    color: #fff0e9;
+    line-height: 1.2;
+    text-shadow: 0 0 30px rgba(232, 162, 182, 0.25);
+}
+
+.welcome-content p {
+    color: #dfd0df;
+}
+
+#global-search {
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(244, 220, 160, 0.24);
+    backdrop-filter: blur(12px);
+}
+
+#global-search:focus {
+    border-color: var(--champagne);
+    box-shadow: 0 0 22px rgba(244, 220, 160, 0.15);
+}
+
+.suggestions-list {
+    background: #25152f;
+    border-color: rgba(244, 220, 160, 0.22);
+    backdrop-filter: blur(16px);
+}
+
+.btn-magic {
+    background: linear-gradient(
+        115deg, #d88ca8, #b96588 55%, #d6ae72
+    );
+    color: #fffaf5;
+    border: 1px solid rgba(255, 240, 220, 0.25);
+    box-shadow: 0 8px 28px rgba(185, 94, 130, 0.25);
+}
+
+.btn-magic:hover {
+    box-shadow: 0 10px 35px rgba(232, 162, 182, 0.3);
+}
+
+/* Khu vườn 30 đóa hoa */
+.garden-header h2 {
+    color: #f4dca0;
+    text-shadow: 0 0 24px rgba(244, 220, 160, 0.2);
+}
+
+.garden-header p {
+    color: #ddcddd;
+    line-height: 1.8;
+}
+
+.garden-map {
+    grid-template-columns: repeat(
+        auto-fit, minmax(min(135px, 100%), 1fr)
+    );
+    gap: 18px;
+}
+
+.flower-node {
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.065),
+        rgba(255,255,255,0.018)
+    );
+    border: 1px solid rgba(232, 162, 182, 0.17);
+    border-radius: 24px;
+    padding: 20px 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px rgba(255,255,255,0.06);
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.flower-node:hover {
+    transform: translateY(-6px);
+    border-color: rgba(244, 220, 160, 0.7);
+    box-shadow: 0 12px 30px rgba(10, 4, 20, 0.3);
+}
+
+/* Học viên: nhẹ nhàng, thanh lịch */
+.flower-node.student .flower-icon {
+    filter: drop-shadow(0 0 9px rgba(232, 162, 182, 0.3));
+}
+
+.flower-node.student .flower-name {
+    color: #f3e6ef;
+}
+
+/* Cô giáo: vàng champagne, nổi bật rõ rệt */
+.flower-node.teacher {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(244, 220, 160, 0.17),
+            transparent 65%
+        ),
+        linear-gradient(145deg, #38233b, #211529);
+    border: 1px solid rgba(244, 220, 160, 0.72);
+    box-shadow:
+        inset 0 0 22px rgba(244, 220, 160, 0.06),
+        0 0 22px rgba(244, 220, 160, 0.09);
+}
+
+.flower-node.teacher::before {
+    content: "✧ TRI ÂN ✧";
+    display: block;
+    margin-bottom: 10px;
+    color: var(--champagne);
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.flower-node.teacher .flower-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 12px rgba(244, 220, 160, 0.65));
+}
+
+.flower-node.teacher .flower-name {
+    color: #ffe8b4;
+    font-weight: 700;
+}
+
+.flower-node.teacher:hover {
+    border-color: #fff0bd;
+    box-shadow:
+        0 0 35px rgba(244, 220, 160, 0.24),
+        inset 0 0 22px rgba(244, 220, 160, 0.08);
+}
+
+/* =========================================
+   CỔNG CỔ TÍCH VÀ SÂN KHẤU HỘP QUÀ
+   ========================================= */
+
+#portal-screen {
+    min-height: 100svh;
+    background:
+        radial-gradient(
+            ellipse at 50% 40%,
+            rgba(114, 57, 106, 0.34),
+            transparent 50%
+        ),
+        linear-gradient(160deg, #24112e, #10091c 75%);
+    overflow: hidden;
+}
+
+.portal-container {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Cổng vàng chỉ dành cho món quà tri ân */
+.fairy-gate {
+    position: absolute;
+    top: 4%;
+    width: min(340px, 82vw);
+    height: 270px;
+    border: 1px solid rgba(244, 220, 160, 0.22);
+    border-bottom: none;
+    border-radius: 180px 180px 0 0;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.fairy-gate::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(244, 220, 160, 0.14);
+    border-bottom: none;
+    border-radius: 180px 180px 0 0;
+}
+
+.fairy-gate .gate-left,
+.fairy-gate .gate-right {
+    position: absolute;
+    top: 10%;
+    width: 1px;
+    height: 90%;
+    background: linear-gradient(
+        transparent,
+        rgba(244, 220, 160, 0.6),
+        transparent
+    );
+}
+
+.fairy-gate .gate-left { left: 8%; }
+.fairy-gate .gate-right { right: 8%; }
+
+.fairy-gate .portal-glow {
+    position: absolute;
+    inset: 10%;
+    border-radius: 50% 50% 0 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(244, 220, 160, 0.08),
+        transparent 70%
+    );
+}
+
+.teacher-portal .fairy-gate {
+    opacity: 1;
+    border-color: rgba(244, 220, 160, 0.8);
+    box-shadow: 0 -10px 40px rgba(244, 220, 160, 0.1);
+}
+
+.teacher-portal .fairy-gate::before {
+    border-color: rgba(244, 220, 160, 0.42);
+}
+
+.gift-box-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 35px 12px;
+}
+
+.recipient-badge {
+    color: #fff0e5;
+    background: rgba(49, 26, 54, 0.8);
+    border: 1px solid rgba(232, 162, 182, 0.5);
+    border-radius: 30px;
+    padding: 12px 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+.teacher-portal .recipient-badge {
+    color: #ffe8b4;
+    border-color: rgba(244, 220, 160, 0.8);
+    box-shadow: 0 0 25px rgba(244, 220, 160, 0.13);
+}
+
+.teacher-note {
+    margin: 25px auto 0;
+    color: var(--champagne);
+    font-size: 0.85rem;
+    letter-spacing: 0.7px;
+    line-height: 1.8;
+}
+
+.teacher-note[hidden] {
+    display: none;
+}
+
+/* Sân khấu hoa nở */
+.gift-stage {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    max-width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    place-items: end center;
+}
+
+.gift-aura {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(232, 162, 182, 0.17),
+        rgba(185, 94, 130, 0.06) 48%,
+        transparent 72%
+    );
+    animation: aura-breathe 3s ease-in-out infinite;
+}
+
+.teacher-portal .gift-aura {
+    background: radial-gradient(
+        circle,
+        rgba(244, 220, 160, 0.28),
+        rgba(211, 166, 100, 0.08) 48%,
+        transparent 72%
+    );
+}
+
+@keyframes aura-breathe {
+    0%, 100% { opacity: 0.65; scale: 0.95; }
+    50% { opacity: 1; scale: 1.08; }
+}
+
+/* Hộp quà ba chiều */
+.gift-box {
+    --box-width: 140px;
+    position: relative;
+    width: var(--box-width);
+    height: 130px;
+    margin: 0 auto 28px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    animation: gift-float 3s ease-in-out infinite;
+    filter: drop-shadow(0 15px 22px rgba(0,0,0,0.3));
+    z-index: 3;
+}
+
+.gift-box:focus-visible {
+    outline: 2px solid var(--champagne);
+    outline-offset: 10px;
+    border-radius: 12px;
+}
+
+.box-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 88px;
+    overflow: hidden;
+    border-radius: 5px 5px 12px 12px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.12),
+            transparent 22%,
+            rgba(255,255,255,0.13) 50%,
+            transparent 76%,
+            rgba(0,0,0,0.1)
+        ),
+        linear-gradient(140deg, #d78aa6, #9c416e);
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,0.2),
+        inset 0 -8px 12px rgba(45,10,35,0.16);
+}
+
+.box-lid {
+    position: absolute;
+    z-index: 4;
+    top: 17px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: 30px;
+    border-radius: 7px;
+    background: linear-gradient(
+        145deg, #f0c4ce, #c97b9a 55%, #9c416e
+    );
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,0.45),
+        0 5px 12px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .75s cubic-bezier(.2,.8,.2,1);
+}
+
+.gift-emblem {
+    position: absolute;
+    left: 12px;
+    color: #fff0ce;
+    font-size: 19px;
+}
+
+.gift-bow {
+    font-size: 25px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+    transform: translateY(-5px);
+}
+
+.box-ribbon {
+    position: absolute;
+    z-index: 2;
+    background: linear-gradient(
+        90deg, #a98040, #f6e3a8, #c8a05c
+    );
+    box-shadow: inset 0 0 4px rgba(255,255,255,0.3);
+}
+
+.ribbon-vertical {
+    left: 43%;
+    bottom: 0;
+    width: 20px;
+    height: 100px;
+}
+
+.ribbon-horizontal {
+    left: -1px;
+    bottom: 43px;
+    width: calc(100% + 2px);
+    height: 13px;
+}
+
+.box-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: #fff1c9;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.gift-box.opened {
+    animation: gift-open-shake .4s ease both;
+}
+
+.gift-box.opened .box-lid {
+    transform: translate(18px, -88px) rotate(24deg);
+}
+
+.gift-box.opened .gift-bow {
+    transform: translateY(-4px) rotate(12deg);
+}
+
+@keyframes gift-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -8px; }
+}
+
+@keyframes gift-open-shake {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.07) rotate(-3deg); }
+    70% { transform: scale(1.03) rotate(2deg); }
+    100% { transform: scale(1); }
+}
+
+/* Hộp quà cô giáo: kích thước và ánh sáng đặc biệt */
+.teacher-portal .gift-box {
+    --box-width: 172px;
+    filter:
+        drop-shadow(0 0 12px rgba(244, 220, 160, 0.38))
+        drop-shadow(0 16px 22px rgba(0,0,0,0.3));
+}
+
+.teacher-portal .box-body {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.18),
+            transparent 25%,
+            rgba(255,255,255,0.18) 50%,
+            transparent 75%,
+            rgba(0,0,0,0.1)
+        ),
+        linear-gradient(140deg, #e5bd79, #a36b36 55%, #68412e);
+}
+
+.teacher-portal .box-lid {
+    background: linear-gradient(
+        145deg, #fff0c4, #d6ad69 55%, #99703e
+    );
+}
+
+.teacher-portal .gift-emblem,
+.teacher-portal .box-seal {
+    color: #fff7d8;
+}
+
+/* =========================================
+   HOA BUNG NỞ - CÁNH HOA RƠI
+   ========================================= */
+
+.bloom-stage {
+    position: absolute;
+    z-index: 8;
+    inset: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.bloom-flower {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    font-size: 75px;
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.05) rotate(-35deg);
+    filter: drop-shadow(0 0 12px rgba(255, 207, 222, 0.8));
+}
+
+.teacher-portal .bloom-flower {
+    font-size: 94px;
+    filter: drop-shadow(0 0 20px rgba(244, 220, 160, 0.9));
+}
+
+.bloom-active .bloom-flower {
+    animation: flower-blossom 1.3s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes flower-blossom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.05) rotate(-35deg);
+    }
+    55% {
+        opacity: 1;
+        transform: translate(-50%, -28px) scale(1.3) rotate(8deg);
+    }
+    75% {
+        transform: translate(-50%, -32px) scale(0.94) rotate(-4deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -35px) scale(1) rotate(0);
+    }
+}
+
+.falling-petal {
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    font-size: 17px;
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.1);
+}
+
+.bloom-active .falling-petal {
+    animation:
+        petal-burst 0.8s ease-out var(--petal-delay) both,
+        petal-fall var(--petal-duration) ease-in var(--petal-delay) 0.8s both;
+}
+
+@keyframes petal-burst {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.1);
+    }
+    25% { opacity: 1; }
+    100% {
+        opacity: 1;
+        transform: translate(
+            calc(-50% + var(--petal-x)),
+            calc(var(--petal-y) - 30px)
+        ) rotate(150deg) scale(1);
+    }
+}
+
+@keyframes petal-fall {
+    0% {
+        opacity: 1;
+        transform: translate(
+            calc(-50% + var(--petal-x)),
+            calc(var(--petal-y) - 30px)
+        ) rotate(150deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(
+            calc(-50% + var(--petal-x) + 35px),
+            calc(var(--petal-y) + 230px)
+        ) rotate(500deg);
+    }
+}
+
+/* Hộp quà hướng dẫn */
+.instruction-text {
+    margin-top: 8px;
+    color: #e4d2e1;
+    line-height: 1.8;
+}
+
+.teacher-portal .instruction-text {
+    color: #f4dca0;
+}
+
+/* Thư lời chúc */
+.wish-modal {
+    background: rgba(12, 6, 20, 0.88);
+    backdrop-filter: blur(14px);
+}
+
+.modal-content {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(232, 162, 182, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #352039, #1a1025);
+    border: 1px solid rgba(232, 162, 182, 0.45);
+    border-radius: 26px;
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.35),
+        0 0 32px rgba(232, 162, 182, 0.09);
+}
+
+.teacher-portal .modal-content {
+    border-color: rgba(244, 220, 160, 0.7);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(244, 220, 160, 0.13),
+            transparent 48%
+        ),
+        linear-gradient(145deg, #39283a, #1a1025);
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.4),
+        0 0 35px rgba(244, 220, 160, 0.12);
+}
+
+.modal-content h3 {
+    color: #f3c1ce;
+    line-height: 1.3;
+}
+
+.teacher-portal .modal-content h3 {
+    color: var(--champagne);
+}
+
+.wish-text-box {
+    color: #f6eaf2;
+    border-left-color: #d98eaa;
+    line-height: 1.9;
+}
+
+.teacher-portal .wish-text-box {
+    border-left-color: var(--champagne);
+}
+
+@media (max-width: 600px) {
+    .screen {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: clamp(2.3rem, 10vw, 3.2rem);
+    }
+
+    .garden-header h2 {
+        font-size: 2.15rem;
+    }
+
+    .garden-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .flower-node {
+        padding: 17px 8px;
+        border-radius: 19px;
+    }
+
+    .flower-name {
+        font-size: 0.78rem;
+        overflow-wrap: anywhere;
+    }
+
+    .gift-stage {
+        transform: scale(.9);
+        transform-origin: top center;
+        margin-bottom: -25px;
+    }
+
+    .modal-content {
+        padding: 32px 20px 24px;
+    }
+
+    .wish-text-box {
+        max-height: 38svh;
+        font-size: 0.9rem;
+    }
+
+    .teacher-portal .gift-box {
+        --box-width: 158px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .screen::before,
+    .screen::after,
+    .flower-icon,
+    .gift-box,
+    .gift-aura {
+        animation: none !important;
+    }
+
+    .bloom-active .bloom-flower,
+    .bloom-active .falling-petal {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+    }
+}
