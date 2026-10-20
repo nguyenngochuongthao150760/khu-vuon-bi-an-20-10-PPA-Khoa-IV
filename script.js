@@ -26,19 +26,18 @@ Kính chúc cô một ngày 20/10 thật ấm áp và ngập tràn yêu thương
         type: "teacher",
         flower: "🌷",
         wish: `Kính gửi Cô Nguyễn Thị Thúy thương mến,
-
-Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc tốt đẹp và tình cảm trân quý nhất.
-Chúng em biết ơn cô vì đã luôn tận tình hướng dẫn, hỗ trợ và đồng hành cùng nhóm trong suốt khóa học Tâm vận động Aucouturier. Từ những chia sẻ thực tế đến những góp ý gần gũi, sự hiện diện và đồng hành của cô đã giúp chúng em có thêm sự tự tin, từng bước hiểu sâu hơn và vận dụng kiến thức vào thực hành.
-Kính chúc cô luôn mạnh khỏe, bình an, hạnh phúc và giữ mãi niềm vui trong công việc mình yêu quý. Mong rằng trên hành trình đồng hành cùng các học viên và trẻ thơ, cô sẽ luôn nhận được thật nhiều sự trân trọng, yêu thương và những thành quả ý nghĩa.
-Cảm ơn cô vì đã luôn kiên nhẫn nâng đỡ, tận tình chỉ dẫn và giúp chúng em vững vàng hơn trên hành trình học hỏi, thực hành và trưởng thành cùng Tâm vận động Aucouturier.
-Chúng em kính chúc cô một ngày 20/10 thật ấm áp, nhiều niềm vui và ngập tràn yêu thương! ❤️`
+Nhân ngày Phụ nữ Việt Nam 20/10, đại diện cho nhóm thực hành, chúng em xin gửi đến cô những lời chúc tốt đẹp và tình cảm trân quý nhất.
+Nhìn lại khoảng thời gian nhóm làm việc cùng cô trong suốt thời gian qua, chúng em vô cùng biết ơn sự tận tình và bao dung của cô. Dù điều kiện làm việc từ xa, giám sát online đôi lúc mang lại những trắc trở nhất định, nhưng cô vẫn luôn kiên nhẫn, sát sao đồng hành và nâng đỡ nhóm qua từng buổi thực hành. Chúng em rất trân trọng những lần dù gia đình có việc, cô vẫn gác lại để dành trọn tâm huyết, chỉ dạy và góp ý cho tụi em từng chút một.
+Đợt vừa rồi biết tin cô dự định bay vào TP.HCM để họp nhóm nhưng lịch thực hành thay đổi đột xuất không thể thực hiện được, chúng em thực sự rất tiếc vì lỡ mất cơ hội được gặp gỡ và học hỏi trực tiếp từ cô. Nhưng hơn hết, sự hiện diện và đồng hành của cô từ xa đã là nguồn động lực to lớn giúp chúng em tự tin vững bước trên hành trình thực hành Tâm vận động. Mong gặp lại cô vào đợt học trực tiếp sắp tới.
+Nhân ngày đặc biệt này, chúng em kính chúc cô luôn dồi dào sức khỏe, bình an và hạnh phúc. Mong cô và những người thân yêu xung quanh luôn được bình an, vui vẻ và an lạc. Chúc cô luôn giữ mãi ngọn lửa đam mê với công việc mình yêu quý và sẽ luôn nhận được thật nhiều sự trân trọng, yêu thương từ các thế hệ học viên và các bé. 
+Chúng em kính chúc cô một ngày 20/10 thật ấm áp, trọn vẹn và ngập tràn tình yêu thương! ❤️`
     },
     {
         id: 3,
         name: "Cô Nguyễn Thị Dạ Hương",
         type: "teacher",
         flower: "🌸",
-        wish: `Kính gửi Cô Nguyễn Thị Dạ Hương kính mến,
+        wish: `Kính gửi Cô Nguyễn Thị Dạ Hương thương mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc yêu thương và lòng biết ơn chân thành nhất.
 
@@ -55,7 +54,7 @@ Chúng em kính chúc cô một ngày 20/10 thật rạng rỡ, ngập tràn yê
         name: "Cô Hoàng Thị Thu Hường",
         type: "teacher",
         flower: "🌺",
-        wish: `Kính gửi Cô Hoàng Thị Thu Hường kính mến,
+        wish: `Kính gửi Cô Hoàng Thị Thu Hường thương mến,
 
 Nhân ngày Phụ nữ Việt Nam 20/10, chúng em xin gửi đến cô những lời chúc tốt đẹp nhất cùng tình cảm trân quý từ tận đáy lòng.
 
